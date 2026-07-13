@@ -57,30 +57,167 @@ nav ul li a:hover {
     color: var(--color-acento);
 }
 
-/* Hero Section */
+/* Hero Section Mejorada */
 .hero {
-    height: 60vh;
+    min-height: 85vh; /* Más alto para dar sensación de imponencia */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: radial-gradient(circle, #1a1a1a 0%, #0a0a0a 100%);
+    position: relative;
+    padding: 60px 20px;
+    background: radial-gradient(circle at center, #1f1e1c 0%, #0a0a0a 70%);
     border-bottom: 1px solid var(--color-borde);
+    overflow: hidden;
+}
+
+/* Efecto de luz ambiental sutil de fondo */
+.hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, rgba(201, 195, 177, 0.05) 0%, rgba(0,0,0,0) 70%);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Badge Premium */
+.badge-premium {
+    display: inline-block;
+    background: rgba(201, 195, 177, 0.1);
+    border: 1px solid var(--color-acento);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    color: var(--color-acento);
+    backdrop-filter: blur(5px);
+    animation: flotar 3s ease-in-out infinite alternate;
 }
 
 .hero h2 {
-    font-size: 3rem;
+    font-size: 3.8rem;
     font-weight: 300;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 20px;
     color: var(--color-texto-principal);
+}
+
+.texto-resaltado {
+    font-weight: 600;
+    background: linear-gradient(135deg, #ffffff 0%, var(--color-acento) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero p {
     font-size: 1.2rem;
     color: var(--color-texto-secundario);
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 650px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* Botones de Acción (CTAs) */
+.hero-botones {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.btn-primario, .btn-secundario {
+    padding: 16px 36px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Botón principal (Beige/Plata brillante) */
+.btn-primario {
+    background-color: var(--color-texto-principal);
+    color: var(--color-fondo);
+    border: 1px solid var(--color-texto-principal);
+    box-shadow: 0 0 20px rgba(234, 230, 221, 0.15);
+}
+
+.btn-primario:hover {
+    background-color: var(--color-acento);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 25px rgba(234, 230, 221, 0.3);
+}
+
+/* Botón secundario (Borde elegante) */
+.btn-secundario {
+    background-color: transparent;
+    color: var(--color-texto-principal);
+    border: 1px solid var(--color-borde);
+}
+
+.btn-secundario:hover {
+    border-color: var(--color-texto-principal);
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: translateY(-3px);
+}
+
+/* Indicador de Scroll */
+.scroll-indicador {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-texto-secundario);
+    opacity: 0.7;
+}
+
+.flecha-abajo {
+    margin-top: 8px;
+    animation: rebotar 2s infinite;
+}
+
+/* Animaciones de la bienvenida */
+@keyframes flotar {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-6px); }
+}
+
+@keyframes rebotar {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-8px); }
+    60% { transform: translateY(-4px); }
+}
+
+/* Adaptación para pantallas pequeñas (Celulares) */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .hero-botones {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto 40px auto;
+    }
 }
 
 /* Filtros */
