@@ -22,13 +22,29 @@
         </nav>
     </header>
 
-    <!-- Inicio -->
+        <!-- Inicio / Bienvenida Mejorada -->
     <section id="inicio" class="hero fade-in">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h2>Elegancia y Cuidado Personal</h2>
-            <p>Descubre nuestra colección exclusiva de prendas minimalistas y productos de belleza de alta gama.</p>
+            <div class="badge-premium">
+                <span>✨ Nueva Colección 2026</span>
+            </div>
+            <h2>Tu Esencia, <br><span class="texto-resaltado">Elevada al Siguiente Nivel</span></h2>
+            <p>Fusionamos el diseño minimalista en prendas de alto gramaje con fórmulas botánicas avanzadas para el cuidado de tu piel. Estilo sin esfuerzo, cuidado sin compromisos.</p>
+            
+            <div class="hero-botones">
+                <a href="#catalogo" class="btn-primario" onclick="filtrarProductos('camisetas')">Explorar Camisetas</a>
+                <a href="#catalogo" class="btn-secundario" onclick="filtrarProductos('belleza')">Línea de Belleza</a>
+            </div>
+
+            <!-- Indicador de scroll suave -->
+            <div class="scroll-indicador">
+                <span>Descubre más</span>
+                <div class="flecha-abajo">↓</div>
+            </div>
         </div>
     </section>
+
 
     <!-- Catálogo con Filtros -->
     <section id="catalogo" class="catalogo-section slide-up">
