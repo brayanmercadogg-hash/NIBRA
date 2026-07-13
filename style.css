@@ -1,0 +1,254 @@
+/* Variables de la Paleta de Colores (Basada en el logo) */
+:root {
+    --color-fondo: #0a0a0a; /* Negro profundo */
+    --color-fondo-carta: #141414; /* Negro ligeramente más claro */
+    --color-texto-principal: #eae6dd; /* Beige/Plata del logo */
+    --color-texto-secundario: #a3a098; /* Beige atenuado */
+    --color-acento: #c9c3b1; /* Beige brillante para hovers */
+    --color-borde: #2a2a2a;
+}
+
+/* Estilos Generales */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--color-texto-principal);
+    background-color: var(--color-fondo);
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+/* Encabezado */
+header {
+    background-color: rgba(10, 10, 10, 0.95);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--color-borde);
+    backdrop-filter: blur(10px);
+}
+
+.logo-container .logo {
+    height: 50px; /* Ajusta según el tamaño deseado */
+    width: auto;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+nav ul li a:hover {
+    color: var(--color-acento);
+}
+
+/* Hero Section */
+.hero {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle, #1a1a1a 0%, #0a0a0a 100%);
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.hero h2 {
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: var(--color-texto-principal);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--color-texto-secundario);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Filtros */
+.filtros {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.btn-filtro {
+    background-color: transparent;
+    color: var(--color-texto-secundario);
+    border: 1px solid var(--color-borde);
+    padding: 10px 25px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-filtro:hover, .btn-filtro.activo {
+    background-color: var(--color-texto-principal);
+    color: var(--color-fondo);
+    border-color: var(--color-texto-principal);
+}
+
+/* Catálogo Grid */
+.catalogo-section {
+    padding: 80px 5%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    margin-bottom: 30px;
+}
+
+.catalogo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.producto-card {
+    background-color: var(--color-fondo-carta);
+    border: 1px solid var(--color-borde);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.4s ease;
+}
+
+.producto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(234, 230, 221, 0.05);
+}
+
+.img-container {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.producto-card:hover .img-container img {
+    transform: scale(1.05);
+}
+
+.producto-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.producto-info h3 {
+    margin: 0 0 10px 0;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.precio {
+    color: var(--color-acento);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.producto-info p {
+    color: var(--color-texto-secundario);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Ocultar elementos filtrados */
+.oculto {
+    display: none !important;
+}
+
+/* Secciones Informativas */
+.info-section {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.info-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--color-fondo-carta);
+    padding: 50px;
+    border: 1px solid var(--color-borde);
+    border-radius: 4px;
+}
+
+/* Botón Flotante */
+.btn-soporte {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--color-texto-principal);
+    color: var(--color-fondo);
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    z-index: 1000;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-soporte:hover {
+    transform: scale(1.05);
+    background-color: var(--color-acento);
+}
+
+/* Animaciones Keyframes */
+.fade-in {
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.slide-up {
+    animation: slideUp 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(40px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid var(--color-borde);
+    color: var(--color-texto-secundario);
+    font-size: 0.9rem;
+}
